@@ -5,10 +5,12 @@ import { Link } from 'react-router-dom'
 import { Settings } from 'react-slick'
 
 const Base = styled.section`
-  height: 66.6666666667vw;
   position: relative;
-  overflow: hidden;
-  width: 100%;
+
+  .slick-list {
+    height: 66.6666666667vw;
+    overflow: hidden;
+  }
 `
 
 const StyleLink = styled(Link)`

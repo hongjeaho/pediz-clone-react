@@ -1,10 +1,30 @@
-import React from 'react'
+import React, { useState } from 'react'
 import ReactSlider, { Settings } from 'react-slick'
+
 import 'slick-carousel/slick/slick.css'
 import 'slick-carousel/slick/slick-theme.css'
 import styled from '@emotion/styled/macro'
 
-const StyleSlider = styled(ReactSlider)``
+const Pagination = styled.div`
+  font-family: Montserrat_R;
+  font-size: 10px;
+  line-height: 16px;
+  position: absolute;
+  right: 20px;
+  bottom: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 20px;
+  padding: 0 6px;
+  color: #fff;
+  border-radius: 20px;
+  background-color: rgba(17, 17, 17, 0.5);
+
+  & > span {
+    margin: 0 3px;
+  }
+`
 
 interface Props {
   settings?: Settings
@@ -12,7 +32,7 @@ interface Props {
 }
 
 export const DEFAULT_SETTIMGS: Settings = {
-  dots: true,
+  dots: false,
   arrows: false,
   infinite: true,
   speed: 800,
@@ -24,7 +44,23 @@ export const DEFAULT_SETTIMGS: Settings = {
 }
 
 const Slider: React.FC<Props> = ({ settings = DEFAULT_SETTIMGS, children }) => {
-  return <StyleSlider {...settings}>{children}</StyleSlider>
+  const [page, setPage] = useState<number>(1)
+
+  return (
+    <>
+      <ReactSlider
+        {...settings}
+        afterChange={(index: number) => {
+          setPage(index + 1)
+        }}
+      >
+        {children}
+      </ReactSlider>
+      <Pagination>
+        <span>{page}</span> / 4 <span></span>
+      </Pagination>
+    </>
+  )
 }
 
 export default Slider
