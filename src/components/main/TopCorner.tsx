@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from '@emotion/styled/macro'
-import Slider, { DEFAULT_SETTIMGS } from '@components/base/Slider'
+import Slider, { DEFAULT_SETTIMGS, CustomerSetting } from '@components/base/Slider'
 import { Link } from 'react-router-dom'
-import { Settings } from 'react-slick'
+import { Banner, Corner } from '@/types/display'
 
 const Base = styled.section`
   position: relative;
@@ -31,38 +31,37 @@ const Image = styled.img`
   vertical-align: middle;
 `
 
-interface Props {}
+interface Props {
+  data?: Corner
+  isLoading: boolean
+}
 
-const settings: Settings = {
+const settings: CustomerSetting = {
   ...DEFAULT_SETTIMGS,
   autoplay: true,
   autoplaySpeed: 3000,
+  isPagging: true,
 }
 
-const TopCorner: React.FC<Props> = () => {
+const TopCorner: React.FC<Props> = ({ data, isLoading }) => {
+  settings.totalCount = data?.banners?.length
   return (
     <Base>
       <Slider settings={settings}>
-        <StyleLink to={'/'}>
-          <Content>
-            <Image src="/images/@thumb/main_720x720_01.jpg" alt="" />
-          </Content>
-        </StyleLink>
-        <StyleLink to={'/'}>
-          <Content>
-            <Image src="/images/@thumb/main_720x720_02.jpg" alt="" />
-          </Content>
-        </StyleLink>
-        <StyleLink to={'/'}>
-          <Content>
-            <Image src="/images/@thumb/main_720x720_03.jpg" alt="" />
-          </Content>
-        </StyleLink>
-        <StyleLink to={'/'}>
-          <Content>
-            <Image src="/images/@thumb/main_720x720_04.jpg" alt="" />
-          </Content>
-        </StyleLink>
+        {isLoading || !data ? (
+          <>Loading..</>
+        ) : (
+          data.banners?.map((item: Banner) => (
+            <StyleLink to={'/'} key={item.seq}>
+              <Content>
+                <Image
+                  src={`${process.env.REACT_APP_IMAGE_URL}/${item.imagePath}`}
+                  alt={item.title}
+                />
+              </Content>
+            </StyleLink>
+          ))
+        )}
       </Slider>
     </Base>
   )

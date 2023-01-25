@@ -27,11 +27,16 @@ const Pagination = styled.div`
 `
 
 interface Props {
-  settings?: Settings
+  settings?: CustomerSetting
   children: React.ReactNode
 }
 
-export const DEFAULT_SETTIMGS: Settings = {
+export interface CustomerSetting extends Settings {
+  isPagging?: boolean
+  totalCount?: number
+}
+
+export const DEFAULT_SETTIMGS: CustomerSetting = {
   dots: false,
   arrows: false,
   infinite: true,
@@ -41,6 +46,8 @@ export const DEFAULT_SETTIMGS: Settings = {
   swipe: true,
   draggable: true,
   autoplay: false,
+  isPagging: false,
+  totalCount: 0,
 }
 
 const Slider: React.FC<Props> = ({ settings = DEFAULT_SETTIMGS, children }) => {
@@ -56,9 +63,11 @@ const Slider: React.FC<Props> = ({ settings = DEFAULT_SETTIMGS, children }) => {
       >
         {children}
       </ReactSlider>
-      <Pagination>
-        <span>{page}</span> / 4 <span></span>
-      </Pagination>
+      {settings.isPagging ? (
+        <Pagination>
+          <span>{page}</span> / {settings.totalCount} <span></span>
+        </Pagination>
+      ) : null}
     </>
   )
 }
