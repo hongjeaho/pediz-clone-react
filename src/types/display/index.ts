@@ -19,3 +19,20 @@ export interface Banner {
   linkType: string
   linkUrl: string
 }
+
+export interface Category {
+  seq: number
+  upperCategorySeq: number
+  categoryCode: string
+  typeCode: string
+  name: string
+  depth: string
+  display: string
+  used: boolean
+  leaf: boolean
+  priority: number
+  sortCode: string
+  categoryLink: string
+  targetSeq: number
+  iconClassName: string
+}
