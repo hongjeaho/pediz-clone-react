@@ -4,10 +4,18 @@ import { AxiosResponse, AxiosError } from 'axios'
 import { ListResponse } from '@/types'
 import { Category } from '@/types/display'
 
-const useFindAllCategory = (categorySeq: number) =>
-  useQuery<AxiosResponse<ListResponse<Category>>, AxiosError>(
-    ['findAllCategory', categorySeq],
-    () => findAllCategory(categorySeq),
-  )
+const useFindAllCategoryByDepth = (depth: number) => {
+  const parameters = {
+    depth,
+    classificationType: 'GENERAL',
+  }
 
-export { useFindAllCategory }
+  console.dir(parameters)
+
+  return useQuery<AxiosResponse<ListResponse<Category>>, AxiosError>(
+    ['findAllCategory', parameters],
+    () => findAllCategory(parameters),
+  )
+}
+
+export { useFindAllCategoryByDepth }

@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="current" height="current" viewBox="0 0 36 36">
+    <g transform="translate(-98 -524)">
+        <circle cx="14" cy="14" r="14" transform="translate(106 524)" style="fill:#fff4d3;opacity:.997"/>
+        <g transform="translate(98.384 527.746)">
+            <path transform="translate(7.912 10.209)" style="stroke-miterlimit:10;stroke-width:2px;stroke:#222;fill:#555" d="M0 0h16.175v14.67H0z"/>
+            <rect width="20.383" height="3.196" rx="1.598" transform="translate(5.809 8.611)" style="fill:#fee088;stroke-miterlimit:10;stroke-width:2px;stroke:#222"/>
+            <rect width="20.769" height="3.196" rx="1.598" transform="translate(5.616 23.281)" style="fill:#fee088;stroke-miterlimit:10;stroke-width:2px;stroke:#222"/>
+            <path transform="translate(20.53 4.754)" style="stroke:#022;fill:none;stroke-miterlimit:10;stroke-width:2px" d="M4.586 0 0 3.857"/>
+            <path d="M17.855 13.974a.328.328 0 0 0-.37.058l-1.1 1.02a2.144 2.144 0 0 0-1.578 0l-1.1-1.02a.328.328 0 0 0-.37-.058.368.368 0 0 0-.2.335v2.241a2.4 2.4 0 0 0 .644 1.652 2.119 2.119 0 0 0 1.555.685h.518a2.117 2.117 0 0 0 1.554-.685 2.4 2.4 0 0 0 .645-1.654v-2.24a.37.37 0 0 0-.198-.334z" transform="translate(.4 1.131)" style="fill:#fff"/>
+        </g>
+    </g>
+</svg>

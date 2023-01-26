@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="current" height="current" viewBox="0 0 36 36">
+    <g transform="translate(-230 -524)">
+        <circle cx="14" cy="14" r="14" transform="translate(238 524)" style="fill:#ebeaff"/>
+        <g>
+            <path d="M14.962 22.78H2.27A1.271 1.271 0 0 1 1 21.509V10.578a5.083 5.083 0 0 1 5.083-5.083h5.067a5.083 5.083 0 0 1 5.083 5.083v10.931a1.271 1.271 0 0 1-1.271 1.271z"
+                  transform="translate(237.355 532.4)"
+                  style="stroke-miterlimit:10;stroke-width:2px;stroke:#222;fill:#9890ff"/>
+            <path transform="translate(238 533.4)"
+                  style="stroke:#333;stroke-miterlimit:10;stroke-width:2px;fill:none" d="M0 0h15.942"/>
+            <path transform="translate(249.089 533.668)"
+                  style="stroke:#333;stroke-miterlimit:10;stroke-width:2px;fill:none" d="M0 4.416V0"/>
+            <path transform="translate(242.853 533.668)"
+                  style="stroke-miterlimit:10;stroke-width:2px;stroke:#222;fill:none" d="M0 4.416V0"/>
+            <path transform="translate(242.412 546.505)"
+                  style="stroke:#fff;stroke-miterlimit:10;stroke-width:2px;fill:none" d="M0 0h7.118"/>
+            <path transform="translate(245.971 542.946)"
+                  style="stroke:#fff;stroke-miterlimit:10;stroke-width:2px;fill:none" d="M0 0v7.118"/>
+        </g>
+    </g>
+</svg>

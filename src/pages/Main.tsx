@@ -2,6 +2,7 @@ import React from 'react'
 import styled from '@emotion/styled/macro'
 import TopCorner from '@/components/main/TopCorner'
 import { useFindAllCorner } from '@/api/display/useCornerApiHook'
+import CategorySection from '@/components/main/CategorySection'
 
 const Base = styled.div``
 
@@ -16,6 +17,7 @@ const Main: React.FC<Props> = () => {
         data={data?.data.payload.filter(item => item.seq === 7)[0]}
         isLoading={isLoading}
       />
+      <CategorySection />
     </Base>
   )
 }

@@ -1,4 +1,4 @@
 import http from '@/api/http'
 
-export const findAllCategory = (categorySeq: number) =>
-  http.get(`/api/public/display-categories/${categorySeq}?keyType=SEQUENCE`)
+export const findAllCategory = (params: object) =>
+  http.get(`/api/public/display-categories`, { params })
